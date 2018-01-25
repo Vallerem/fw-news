@@ -1,17 +1,21 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import "./App.css";
+import { Route, Switch } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import LoginView from "./views/LoginView";
 import PrivateRoute from "./components/PrivateRoute";
 
 const App = ({ location, isLogged }) => (
-  <div>
+  <div className="h-100">
     <Navbar />
-    <div className="container-fluid">
+    <div className="container-fluid h-100">
       {/* {isLogged && <Navbar />} */}
-      <PrivateRoute exact path="/" component={() => <h1>Hey you!!</h1>} />
-      <PrivateRoute exact path="/login" component={() => <h1>Login</h1>} />
+      <Switch>
+        <PrivateRoute exact path="/" component={() => <h1>Hey you!!</h1>} />
+        <PrivateRoute path="/login" component={LoginView} />
+        <Route render={() => <h1>Not found</h1>} />
+      </Switch>
     </div>
   </div>
 );

@@ -6,10 +6,11 @@ import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import registerServiceWorker from "./registerServiceWorker";
+
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.css"; // Necessary for Reactstrap
 
 import rootReducer from "./redux/rootReducer";
-import "./App.css";
 import App from "./App";
 
 const store = createStore(
