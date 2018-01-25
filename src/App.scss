@@ -1,5 +1,6 @@
-html, body{
-  height: 100%!important;
+html,
+body {
+  height: 100% !important;
 }
 
 .news-link {
@@ -7,5 +8,13 @@ html, body{
   &:hover {
     text-decoration: none;
     color: #000000;
+  }
+}
+
+.login-fw-logo {
+  @media (max-width: 700px) {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 30px;
   }
 }

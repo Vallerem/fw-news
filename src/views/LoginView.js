@@ -50,13 +50,13 @@ export class LoginView extends Component {
   };
 
   handleChange = e => {
-    console.log(this.state)
+    console.log(this.state);
     this.setState({
       data: {
         ...this.state.data,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value
       },
-      errors: {},
+      errors: {}
     });
   };
 
@@ -70,7 +70,7 @@ export class LoginView extends Component {
           style={{ textAlign: "center" }}
         >
           <img
-            className="img-fluid"
+            className="img-fluid login-fw-logo"
             src="img/fw_logo.jpg"
             alt="Future Wrkshops logo"
           />

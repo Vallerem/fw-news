@@ -1,0 +1,36 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "title": "Random title 1",
+      "image": "TODO",
+      "source": "TODO",
+      "content": "TODO",
+      "date": "TODO"
+    },
+    {
+      "id": 2,
+      "title": "Random title 2",
+      "image": "TODO",
+      "source": "TODO",
+      "content": "TODO",
+      "date": "TODO"
+    },
+    {
+      "id": 3,
+      "title": "Random title 3",
+      "image": "TODO",
+      "source": "TODO",
+      "content": "TODO",
+      "date": "TODO"
+    },
+    {
+      "id": 4,
+      "title": "Random title 3",
+      "image": "TODO",
+      "source": "TODO",
+      "content": "TODO",
+      "date": "TODO"
+    }
+  ]
+}
