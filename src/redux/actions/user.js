@@ -1,10 +1,10 @@
-import { USER_LOGGED_IN, USER_LOGGED_OUT } from "./types";
-import api from "../../api/auth";
-import setAuthorizationHeader from "../utils/setAuthorizationHeader";
+import { USER_LOGGED_IN, USER_LOGGED_OUT } from "../types";
+import userAPI from "../../api/auth";
+import setAuthorizationHeader from "../../utils/setAuthorizationHeader";
 
-export const userLoggedIn = user => ({
+export const userLoggedIn = token => ({
   type: USER_LOGGED_IN,
-  user
+  token
 });
 
 export const userLoggedOut = () => ({
@@ -12,27 +12,15 @@ export const userLoggedOut = () => ({
 });
 
 export const login = credentials => dispatch =>
-  api.user.login(credentials).then(user => {
-    localStorage.bookwormJWT = user.token;
-    setAuthorizationHeader(user.token);
-    dispatch(userLoggedIn(user));
+  userAPI.login(credentials).then(token => {
+    localStorage.JWT = token;
+    localStorage.setItem("JWT", token);
+    setAuthorizationHeader(token);
+    dispatch(userLoggedIn(token));
   });
 
 export const logout = () => dispatch => {
-  localStorage.removeItem("bookwormJWT");
+  localStorage.removeItem("JWT");
   setAuthorizationHeader();
   dispatch(userLoggedOut());
 };
-
-export const confirm = token => dispatch =>
-  api.user.confirm(token).then(user => {
-    localStorage.bookwormJWT = user.token;
-    dispatch(userLoggedIn(user));
-  });
-
-export const resetPasswordRequest = ({ email }) => () =>
-  api.user.resetPasswordRequest(email);
-
-export const validateToken = token => () => api.user.validateToken(token);
-
-export const resetPassword = data => () => api.user.resetPassword(data);

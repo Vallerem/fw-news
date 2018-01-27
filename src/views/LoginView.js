@@ -1,27 +1,34 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 import Validator from "validator";
 import {
   Form,
   FormGroup,
   Label,
   Input,
-  FormText,
   FormFeedback,
   Button
 } from "reactstrap";
+import { login } from "../redux/actions/user";
+import { verifyJWT } from "../utils/JWThelpers";
 
 export class LoginView extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: {
-        username: "",
-        password: ""
+        username: "user",
+        password: "FCtb2PGbHpgq"
       },
       loading: false,
       errors: {}
     };
   }
+
+  componentWillMount = () => {
+    return verifyJWT() ? this.props.history.push("/") : null;
+  };
 
   handleSubmit = e => {
     e.preventDefault();
@@ -30,16 +37,13 @@ export class LoginView extends Component {
     if (Object.keys(errors).length === 0) {
       this.setState({ loading: true });
       this.props
-        .submit(this.state.data)
-        .catch(err =>
-          this.setState({ errors: err.response.data.errors, loading: false })
-        );
+        .login(this.state.data)
+        .then(() => this.props.history.push("/"));
     }
   };
 
   validate = data => {
     const errors = {};
-    console.log(data);
     if (!Validator.equals(data.username, "user")) {
       errors.username = "Invalid Username";
     }
@@ -50,7 +54,6 @@ export class LoginView extends Component {
   };
 
   handleChange = e => {
-    console.log(this.state);
     this.setState({
       data: {
         ...this.state.data,
@@ -62,7 +65,7 @@ export class LoginView extends Component {
 
   render() {
     const { data, loading, errors } = this.state;
-
+    const { isLogged } = this.props;
     return (
       <div className="h-100 row align-items-center mt-5">
         <div
@@ -76,7 +79,7 @@ export class LoginView extends Component {
           />
         </div>
         <div className="col col-12 col-md-6 col-lg-6">
-          <Form onSubmit={this.handleSubmit} loading={loading}>
+          <Form onSubmit={this.handleSubmit}>
             <FormGroup>
               <Label for="username">Username</Label>
               <Input
@@ -86,6 +89,8 @@ export class LoginView extends Component {
                 required
                 onChange={this.handleChange}
                 valid={!errors.username}
+                autoComplete="false"
+                defaultValue="user"
               />
               <FormFeedback>{errors.username}</FormFeedback>
             </FormGroup>
@@ -98,16 +103,12 @@ export class LoginView extends Component {
                 required
                 onChange={this.handleChange}
                 valid={!errors.password}
+                autoComplete="new-password"
+                defaultValue="FCtb2PGbHpgq"
               />
               <FormFeedback>{errors.password}</FormFeedback>
             </FormGroup>
-            <Button
-              disabled={
-                !data.username.length || !data.password.length || loading
-              }
-              color="primary"
-              type="submit"
-            >
+            <Button color="primary" type="submit">
               Log In
             </Button>
           </Form>
@@ -117,4 +118,10 @@ export class LoginView extends Component {
   }
 }
 
-export default LoginView;
+const mapStateToProps = state => {
+  return {
+    isLogged: !!state.user
+  };
+};
+
+export default connect(mapStateToProps, { login })(LoginView);

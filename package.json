@@ -12,7 +12,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev-server": "nodemon server.js",
-    "start-prod": "npm run build && node seerver.js"
+    "start-prod": "npm run build && node server.js"
   },
   "dependencies": {
     "axios": "^0.17.1",

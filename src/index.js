@@ -7,14 +7,19 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import registerServiceWorker from "./registerServiceWorker";
 
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.css"; // Necessary for Reactstrap
+import "./App.css";
 
 import rootReducer from "./redux/rootReducer";
 import App from "./App";
 
+const initialState = { 
+  user: localStorage.getItem("JWT") || null
+};
+
 const store = createStore(
   rootReducer,
+  initialState,
   composeWithDevTools(applyMiddleware(thunk))
 );
 

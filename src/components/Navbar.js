@@ -1,22 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 import { PropTypes } from "prop-types";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, NavItem, Button } from "reactstrap";
+import { logout } from "../redux/actions/user";
 
-export default class Example extends React.Component {
+class NavbarComp extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
+  }
 
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      isOpen: false
-    };
-  }
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
+  logout = () => {
+    this.props.logout();
+    // setTimeout(() => {
+    //   this.props.history.push("/login");
+    // }, 2000);
+  };
+
   render() {
     return (
       <div>
@@ -26,7 +27,7 @@ export default class Example extends React.Component {
           </Link>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <Button color="danger" onClick={() => console.log("logout")}>
+              <Button color="danger" onClick={this.logout}>
                 Logout
               </Button>
             </NavItem>
@@ -46,3 +47,5 @@ Navbar.propTypes = {
   expand: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
 };
+
+export default connect(null, { logout })(NavbarComp);
