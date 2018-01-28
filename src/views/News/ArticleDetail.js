@@ -20,22 +20,6 @@ export class ArticleDetail extends Component {
     };
   }
 
-  componentWillReceiveProps = () => {
-    const { match: { params } } = this.props;
-    this.getArticle(params.id)
-      .then(article => {
-        this.setState({
-          article
-        });
-      })
-      .catch(err => {
-        if (err.response.status === 404) {
-          return this.props.history.push("/not-found");
-        }
-        this.props.logout();
-      });
-  };
-
   componentDidMount = () => {
     const { match: { params } } = this.props;
     this.getArticle(params.id)
@@ -61,8 +45,24 @@ export class ArticleDetail extends Component {
     return (
       <div className="container-fluid article-detail">
         <div className="row">
-          <div className="col-12 col-md-12">
-            <h1>{article.id}</h1>
+          <div className="col-12">
+            <h1>{article.title}</h1>
+            <h5>
+              {article.source} <small className="article-date" >{article.date}</small>
+            </h5>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="col-12 col-md-12 col-lg-2">
+            <img
+              class=" article-image-detail"
+              src={article.image}
+              alt={article.title}
+            />
+          </div>
+          <div className="col-12 col-md-12 col-lg-10 article-main-content">
+            <p>{article.content}</p>
           </div>
         </div>
       </div>

@@ -3,11 +3,13 @@ import { PropTypes } from "prop-types";
 import { Link } from "react-router-dom";
 import { DropdownItem } from "reactstrap";
 
+import { trimContent } from "../utils/stringTrimmer";
+
 const DropdownItemsList = props => {
   const { article } = props;
   return (
     <DropdownItem tag={Link} to={`/${article.id}`}>
-      {article.title}
+      {`${trimContent(article.title, 6)}`}
     </DropdownItem>
   );
 };

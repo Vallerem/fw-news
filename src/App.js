@@ -19,7 +19,7 @@ const App = ({ location, isLogged, history }) => (
         <Route path="/login" component={LoginView} />
         <PrivateRoute path="/not-found" component={() => <h1>Not found</h1>} />
         <PrivateRoute exact path="/" component={NewsList} />
-        <PrivateRoute path="/:id" component={ArticleDetail} />
+        <PrivateRoute path="/:id" component={ (props) => <ArticleDetail {...props} />} />
       </Switch>
     </div>
   </div>
