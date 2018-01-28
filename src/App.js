@@ -15,9 +15,10 @@ const App = ({ location, isLogged, history }) => (
     {isLogged && <NavbarComp history={history} />}
     <div className="container-fluid h-100">
       <Switch>
-        <PrivateRoute exact path="/" component={NewsList} />
         <Route path="/login" component={LoginView} />
-        <PrivateRoute component={() => <h1>Not found</h1>} />
+        <PrivateRoute path="/not-found" component={() => <h1>Not found</h1>} />
+        <PrivateRoute exact path="/" component={NewsList} />
+        <PrivateRoute path="/:id" component={() => <h2>News detail</h2>} />
       </Switch>
     </div>
   </div>

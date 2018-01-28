@@ -11,7 +11,7 @@ const PrivateRoute = ({ isLogged, component: Component, ...rest }) => (
       isLogged ? <Component {...props} /> : <Redirect to="/login" />
     }
   />
-  );
+);
 
 PrivateRoute.propTypes = {
   isLogged: PropTypes.bool.isRequired,

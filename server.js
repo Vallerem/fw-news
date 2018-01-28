@@ -24,6 +24,7 @@ const verifyJWT = (req, res, next) => {
   const token = req.headers["authorization"];
   if (token) {
     const getJustToken = token.split(" ")[1];
+    console.log(token)
     jwt.verify(
       getJustToken,
       secretJWTKeyThatShouldNotBeHere,
@@ -61,7 +62,7 @@ app.post("/login", (req, res, next) => {
   }
   const payload = { id: "777", username };
   const token = jwt.sign(payload, secretJWTKeyThatShouldNotBeHere, {
-    expiresIn: "24h" // should expire in 1 hour on prod ###TODO
+    expiresIn: "24h" // should expire in 1 hour on prod ###TODO 60 * 60
   });
   res.status(200).send(token);
 });

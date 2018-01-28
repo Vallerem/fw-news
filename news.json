@@ -1,36 +1,38 @@
 {
   "news": [
     {
-      "id": 1,
-      "title": "Random title 1",
-      "image": "TODO",
+      "id": 4,
+      "title": "Random title 3",
+      "image": "",
       "source": "TODO",
       "content": "TODO",
-      "date": "TODO"
-    },
-    {
-      "id": 2,
-      "title": "Random title 2",
-      "image": "TODO",
-      "source": "TODO",
-      "content": "TODO",
-      "date": "TODO"
+      "date": "JAN 22 2018"
     },
     {
       "id": 3,
       "title": "Random title 3",
-      "image": "TODO",
+      "image": "",
       "source": "TODO",
       "content": "TODO",
-      "date": "TODO"
+      "date": "JAN 10 2018"
     },
     {
-      "id": 4,
-      "title": "Random title 3",
-      "image": "TODO",
+      "id": 2,
+      "title": "Random title 2",
+      "image": "",
       "source": "TODO",
       "content": "TODO",
-      "date": "TODO"
+      "date": "DEC 22, 2017 "
+    },
+    {
+      "id": 1,
+      "title": "How iPhone X changes things",
+      "image":
+        "http://i.dailymail.co.uk/i/pix/2017/09/04/12/43E524EB00000578-4850696-image-a-14_1504525249017.jpg",
+      "source": "COMPUTERWORLD",
+      "content":
+        "Biometric ID has come of age. From Touch ID fingerprint sensors to face recognition systems and whatever comes beyond. It’s not impossible to speculate that one day our solutions will even be able to recognise us through a combination of biometric signals: fingerprint, face, pulse, even by blood type as mobile sensor development accelerates. That’s important – iPhone X also signals that in future our device security will not rely on a single security flag, but on multiple protections: you still need a strong passcode even when using Face ID. We can anticipate the gradual evolution of multiple, complementary forms of biometric ID.",
+      "date": "DEC 14, 2017 "
     }
   ]
 }

@@ -74,7 +74,7 @@ export class LoginView extends Component {
         >
           <img
             className="img-fluid login-fw-logo"
-            src="img/fw_logo.jpg"
+            src="img/fw_logo.png"
             alt="Future Wrkshops logo"
           />
         </div>
@@ -83,6 +83,7 @@ export class LoginView extends Component {
             <FormGroup>
               <Label for="username">Username</Label>
               <Input
+                className="login-inputs"
                 type="text"
                 name="username"
                 id="username"
@@ -97,6 +98,7 @@ export class LoginView extends Component {
             <FormGroup>
               <Label for="password">Password</Label>
               <Input
+                className="login-inputs"
                 type="password"
                 name="password"
                 id="password"

@@ -1,6 +1,16 @@
 html,
 body {
-  height: 100% !important; }
+  height: 100% !important;
+  background: #F5F5F5; }
+
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0; }
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0; }
 
 .news-link {
   color: #000000; }
@@ -8,8 +18,15 @@ body {
     text-decoration: none;
     color: #000000; }
 
-@media (max-width: 700px) {
-  .login-fw-logo {
-    max-width: 150px;
-    max-height: 150px;
-    margin: 30px; } }
+.login-inputs {
+  width: 50%; }
+  @media (max-width: 992px) {
+    .login-inputs {
+      width: 100%; } }
+
+.navbar-brand {
+  width: 70px;
+  margin-right: 0; }
+
+.article-card:hover {
+  opacity: 0.9; }

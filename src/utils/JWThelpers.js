@@ -13,15 +13,15 @@ export const decodeJWT = () => {
 
 // very basic way to verify the JWT
 export const verifyJWT = () => {
-  // As said in the server.js file the JWT secret shouldn't be exposed like this by any mean and NEVER uploaded to github, bitbucket etc...
   if (!localStorage.getItem("JWT")) {
-    return false
+    return false;
   }
-  let token = localStorage.getItem("JWT")
+  let token = localStorage.getItem("JWT");
   let verified = null;
+  // As said in the server.js file the JWT secret shouldn't be exposed like this by any mean and NEVER uploaded to github, bitbucket etc...
   jwt.verify(token, "secret777", (err, decoded) => {
     if (err) {
-      return verified = false; 
+      return (verified = false);
     }
     verified = true;
   });
