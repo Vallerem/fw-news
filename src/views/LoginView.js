@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
 import Validator from "validator";
 import {
   Form,
@@ -18,8 +17,8 @@ export class LoginView extends Component {
     super(props);
     this.state = {
       data: {
-        username: "user",
-        password: "FCtb2PGbHpgq"
+        username: "",
+        password: ""
       },
       loading: false,
       errors: {}
@@ -64,8 +63,7 @@ export class LoginView extends Component {
   };
 
   render() {
-    const { data, loading, errors } = this.state;
-    const { isLogged } = this.props;
+    const { errors } = this.state;
     return (
       <div className="h-100 row align-items-center mt-5">
         <div
@@ -90,8 +88,7 @@ export class LoginView extends Component {
                 required
                 onChange={this.handleChange}
                 valid={!errors.username}
-                autoComplete="false"
-                defaultValue="user"
+                autoComplete="username"
               />
               <FormFeedback>{errors.username}</FormFeedback>
             </FormGroup>
@@ -105,8 +102,7 @@ export class LoginView extends Component {
                 required
                 onChange={this.handleChange}
                 valid={!errors.password}
-                autoComplete="new-password"
-                defaultValue="FCtb2PGbHpgq"
+                autoComplete="current-password"
               />
               <FormFeedback>{errors.password}</FormFeedback>
             </FormGroup>
