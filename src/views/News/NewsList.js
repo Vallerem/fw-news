@@ -1,13 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import {
-//   Button,
-//   Card,
-//   CardImgOverlay,
-//   CardText,
-//   CardTitle,
-//   CardImg
-// } from "reactstrap";
 
 import newsAPI from "../../api/news";
 import { logout } from "../../redux/actions/user";
@@ -25,7 +17,6 @@ export class NewsList extends Component {
   componentDidMount = () => {
     this.getNews()
       .then(data => {
-        console.log(data.news);
         this.setState({
           articles: data.news
         });
@@ -39,7 +30,6 @@ export class NewsList extends Component {
 
   render() {
     const { articles } = this.state;
-    console.log(this.state);
     return (
       <div className="row mt-4 mb-4 no-gutter">
         {articles.map((article, index) => (

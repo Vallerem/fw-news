@@ -9,16 +9,31 @@ import {
   Button,
   DropdownMenu,
   UncontrolledDropdown,
-  DropdownToggle,
-  DropdownItem
+  DropdownToggle
 } from "reactstrap";
+
+import newsAPI from "../api/news";
 import { logout } from "../redux/actions/user";
+import DropdownItemsList from "./DropdownItemsList";
 
 class NavbarComp extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      news: []
+    };
   }
+
+  componentDidMount = () => {
+    newsAPI
+      .getNews()
+      .then(data => {
+        this.setState({
+          news: data.news
+        });
+      })
+      .catch(err => this.props.logout());
+  };
 
   logout = () => {
     this.props.logout();
@@ -44,18 +59,9 @@ class NavbarComp extends Component {
           <UncontrolledDropdown>
             <DropdownToggle caret>News</DropdownToggle>
             <DropdownMenu>
-              <DropdownItem tag={Link} to="/1">
-                Article 1
-              </DropdownItem>
-              <DropdownItem tag={Link} to="/2">
-                Article 2
-              </DropdownItem>
-              <DropdownItem tag={Link} to="/3">
-                Article 3
-              </DropdownItem>
-              <DropdownItem tag={Link} to="/4">
-                Article 4
-              </DropdownItem>
+              {this.state.news.map((article, index) => (
+                <DropdownItemsList key={article.id} article={article} />
+              ))}
             </DropdownMenu>
           </UncontrolledDropdown>
           <Nav className="ml-auto" navbar>

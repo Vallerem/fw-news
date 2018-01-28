@@ -13,9 +13,14 @@ const ArticleItem = props => {
 
   return (
     <div className="col-12 col-md-6 col-lg-4">
-      <Card className="article-card no-gutters" inverse tag={Link} to={`/${article.id}`}>
+      <Card
+        className="article-card no-gutters"
+        inverse
+        tag={Link}
+        to={`/${article.id}`}
+      >
         <CardImg
-          style={{height: 300}} 
+          style={{ height: 300 }}
           width="100%"
           src={
             article.image.length
@@ -24,7 +29,7 @@ const ArticleItem = props => {
           }
           alt={`article about ${article.title}`}
         />
-        <CardImgOverlay style={{background: "rgba(0,0,0,0.4)"}} >
+        <CardImgOverlay style={{ background: "rgba(0,0,0,0.4)" }}>
           <CardTitle>{article.title}</CardTitle>
           <CardText>{`${trimContent(article.content)}...`}</CardText>
           <CardText>{article.date}</CardText>

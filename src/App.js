@@ -5,10 +5,11 @@ import { Route, Switch } from "react-router-dom";
 
 import { verifyJWT } from "./utils/JWThelpers";
 
+import PrivateRoute from "./components/PrivateRoute";
 import NavbarComp from "./components/Navbar";
 import LoginView from "./views/LoginView";
 import NewsList from "./views/News/NewsList";
-import PrivateRoute from "./components/PrivateRoute";
+import ArticleDetail from "./views/News/ArticleDetail";
 
 const App = ({ location, isLogged, history }) => (
   <div className="h-100">
@@ -18,7 +19,7 @@ const App = ({ location, isLogged, history }) => (
         <Route path="/login" component={LoginView} />
         <PrivateRoute path="/not-found" component={() => <h1>Not found</h1>} />
         <PrivateRoute exact path="/" component={NewsList} />
-        <PrivateRoute path="/:id" component={() => <h2>News detail</h2>} />
+        <PrivateRoute path="/:id" component={ArticleDetail} />
       </Switch>
     </div>
   </div>

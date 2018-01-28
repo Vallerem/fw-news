@@ -24,7 +24,7 @@ const verifyJWT = (req, res, next) => {
   const token = req.headers["authorization"];
   if (token) {
     const getJustToken = token.split(" ")[1];
-    console.log(token)
+    console.log(token);
     jwt.verify(
       getJustToken,
       secretJWTKeyThatShouldNotBeHere,
@@ -76,8 +76,9 @@ app.get("/api/v1/news/:id", verifyJWT, (req, res, next) => {
   let newsId = parseInt(req.params.id, 10);
   let selectedNews = news.news.find(item => item.id === newsId);
 
-  // easy way to check if the article/new exists. Here should be a db method
-  if (newsId <= 4) {
+  let articlesIDs = news.news.map(article => article.id);
+  // harcoded way to check if the article exists. Here should be a db method to check it out.
+  if (articlesIDs.includes(newsId)) {
     return res.json(selectedNews);
   }
   const error = "Not Found";
