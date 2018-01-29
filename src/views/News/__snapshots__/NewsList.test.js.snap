@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NewsList /> renders correctly 1`] = `
+<NewsList
+  logout={[Function]}
+>
+  <div
+    className="row mt-4 mb-4 no-gutter"
+  />
+</NewsList>
+`;

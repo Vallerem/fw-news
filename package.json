@@ -44,7 +44,8 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-enzyme": "^4.0.2",
     "nodemon": "^1.14.11",
-    "react-test-renderer": "^16.2.0"
+    "react-test-renderer": "^16.2.0",
+    "sinon": "^4.2.2"
   },
   "proxy": "http://localhost:8080"
 }

@@ -1,14 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import {
-//   Button,
-//   Card,
-//   CardImgOverlay,
-//   CardText,
-//   CardTitle,
-//   CardImg
-// } from "reactstrap";
-
 import newsAPI from "../../api/news";
 import { logout } from "../../redux/actions/user";
 
@@ -48,7 +39,8 @@ export class ArticleDetail extends Component {
           <div className="col-12">
             <h1>{article.title}</h1>
             <h5>
-              {article.source} <small className="article-date" >{article.date}</small>
+              {article.source}{" "}
+              <small className="article-date">{article.date}</small>
             </h5>
           </div>
         </div>
@@ -56,7 +48,7 @@ export class ArticleDetail extends Component {
         <div className="row">
           <div className="col-12 col-md-12 col-lg-2">
             <img
-              class=" article-image-detail"
+              className=" article-image-detail"
               src={article.image}
               alt={article.title}
             />
