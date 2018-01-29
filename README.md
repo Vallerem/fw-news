@@ -13,7 +13,7 @@ Built with and amazing JavaScript library called [React](https://reactjs.org/). 
 
 In this case I've used create-react-app. A template provided by Facebook that comes with a nice configuration of babel, webpack, jest, eslint end so on. On the other hand, _React router_ handles the routing logic of the app, a pretty useful library I would say.
 
-### Aditional Libraries:
+### Additional Libraries:
 
 * **Reactstrap**: A library to use Bootstrap 4 dedicated components
 * **Redux**: A bit of overkill for and app with this size and complexity but _Redux_ let's you centralize your app state and offers many advantages. Components don't rely anymore on the props that are being passed to them and can access data through the connect HOC and retrieve the data from the global state of the app.
