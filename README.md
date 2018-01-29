@@ -9,7 +9,7 @@ Web-app that displays a view with a list of news and let's you see the details o
 
 ## **Front end**
 
-Built with and amazing JavaScript called [React](https://reactjs.org/). React let's you handle fairly easily the state and behaviour of the UI in your application on any environment.
+Built with and amazing JavaScript library called [React](https://reactjs.org/). React let's you handle fairly easily the state and behaviour of the UI in your application on any environment.
 
 In this case I've used create-react-app. A template provided by Facebook that comes with a nice configuration of babel, webpack, jest, eslint end so on. On the other hand, _React router_ handles the routing logic of the app, a pretty useful library I would say.
 
@@ -25,10 +25,10 @@ Besides these libraries I've used a couple more for responsive design, JWT decod
 
 ## **Back end**
 
-Built in with Node and Express.js. Serves the static files and has the API endpoints. It it also the responsible for the JWT generation and verification. Many libraries are basic for the Express environment such as _body-parser_ to receive the data in POST/PUT requests or _nodemon_ to refresh the server on every change.
+Built in with Node and Express.js. Serves the static files and has the API endpoints. It it also the responsible for the JWT generation and verification. Many libraries used in this project are basic for the Express environment such as _body-parser_ to receive the data in POST/PUT requests or _nodemon_ to refresh the server on every change.
 
 ## **Deploy**
 
-Deployed on Heroku. The 'server.js` file acts as the server entry point. and serves the static html with the bundled js and css. It also provides the API that provides the news data and handles the log in behaviour.
+Deployed on Heroku. The `server.js` file acts as the server entry point. and serves the static html with the bundled js and css. It also hosts the API that provides the news data and handles the log in logic.
 
 P.D: The live demo may take a while to start or render images as Heroku needs to wake up the server from its slumber :P.
