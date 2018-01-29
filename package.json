@@ -10,11 +10,19 @@
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev-server": "nodemon server.js",
+    "start-prod": "npm run build && node server.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
     "bootstrap": "4.0.0-beta.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.1",
+    "morgan": "^1.9.0",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.2",
     "prop-types": "^15.6.0",
@@ -28,12 +36,16 @@
     "reactstrap": "^5.0.0-alpha.4",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "validator": "^9.2.0"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest-enzyme": "^4.0.2",
-    "react-test-renderer": "^16.2.0"
-  }
+    "nodemon": "^1.14.11",
+    "react-test-renderer": "^16.2.0",
+    "sinon": "^4.2.2"
+  },
+  "proxy": "http://localhost:8080"
 }

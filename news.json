@@ -1,0 +1,45 @@
+{
+  "news": [
+    {
+      "id": 33453,
+      "title":
+        "New technology is bringing the power of augmented reality into clinical practice.",
+      "image":
+        "http://leanscience.fit/wp-content/uploads/2017/04/body-science.jpg",
+      "source": "SCIENCEDAILY",
+      "content":
+        "The system, called ProjectDR, allows medical images such as CT scans and MRI data to be displayed directly on a patient's body in a way that moves as the patient does. 'We wanted to create a system that would show clinicians a patient's internal anatomy within the context of the body,' explained Ian Watts, a computing science graduate student and the developer of ProjectDR. The technology includes a motion-tracking system using infrared cameras and markers on the patient's body, as well as a projector to display the images. But the really difficult part, Watts explained, is having the image track properly on the patient's body even as they shift and move. The solution: custom software written by Watts that gets all of the components working together.",
+      "date": "JAN 24 2018"
+    },
+    {
+      "id": 26752,
+      "title": "A Glimpse of the New Vive Pro Controllers & SteamVR Tracking",
+      "image":
+        "http://o.aolcdn.com/hss/storage/midas/7158fd22a627037ff3804c65276df7f0/203529152/Manus_productphoto.jpg",
+      "source": "ROADTOVR",
+      "content":
+        "While HTC is planning to launch the Vive Pro headset itself starting in Q1, the full package including the headset, controllers, and new SteamVR Tracking 2.0 base stations won’t come until later in the year. Until then, here’s a glimpse that comes to us from Alvin Wang Graylin, HTC’s Vive China president, who recently took the kit to a Vive developer meetup in the region. While the Vive Pro’s increase resolution is its headline feature for most, lurking underneath those iconic dots covering the headset and controllers are new sensors supporting SteamVR Tracking 2.0. The new 2.0 tracking is said to be better in several ways, including support for even larger playspaces of up to 33 × 33 feet if you link four of them together. While the Vive Pro headset and controllers are backwards compatible with 1.0 base stations (that ship with the original Vive), you won’t see the major benefits of 2.0 without the 2.0 base stations (which won’t be available until later this year, and won’t be backwards compatible with the original Vive).",
+      "date": "JAN 22, 2017 "
+    },
+    {
+      "id": 45345,
+      "title": "React is your agent",
+      "image":
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png",
+      "source": "FREECODECAMP",
+      "content":
+        "You can think of React as the agent we hired to communicate with the browser. Take the current timestamp display above as an example. Instead of us manually going to the browser and invoking DOM API operations to find and update the p#timestamp element every second, we just changed a property on the state of the component and React did its job of communicating with the browser on our behalf. I believe this is the true reason why React is popular. We hate talking to Mr. Browser (and the so many dialects of the DOM language that it speaks) and React volunteered to do all the talking for us, for free.",
+      "date": "DEC 22 2018"
+    },
+    {
+      "id": 94872,
+      "title": "How iPhone X changes things",
+      "image":
+        "http://i.dailymail.co.uk/i/pix/2017/09/04/12/43E524EB00000578-4850696-image-a-14_1504525249017.jpg",
+      "source": "COMPUTERWORLD",
+      "content":
+        "Biometric ID has come of age. From Touch ID fingerprint sensors to face recognition systems and whatever comes beyond. It’s not impossible to speculate that one day our solutions will even be able to recognise us through a combination of biometric signals: fingerprint, face, pulse, even by blood type as mobile sensor development accelerates. That’s important – iPhone X also signals that in future our device security will not rely on a single security flag, but on multiple protections: you still need a strong passcode even when using Face ID. We can anticipate the gradual evolution of multiple, complementary forms of biometric ID.",
+      "date": "DEC 17, 2017 "
+    }
+  ]
+}
