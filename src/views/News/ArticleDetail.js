@@ -37,7 +37,7 @@ export class ArticleDetail extends Component {
       <div className="container-fluid article-detail">
         <div className="row">
           <div className="col-12">
-            <h1>{article.title}</h1>
+            <h1 style={{ marginTop: 10 }}>{article.title}</h1>
             <h5>
               {article.source}{" "}
               <small className="article-date">{article.date}</small>
