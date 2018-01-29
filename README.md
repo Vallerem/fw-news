@@ -2,7 +2,7 @@
 
 Web-app that displays a view with a list of news and let's you see the details of each one of them.
 
-## [Live demo](https://fw-news.herokuapp.com/)
+### [Live demo](https://fw-news.herokuapp.com/)
 
 ## **Front end**
 
