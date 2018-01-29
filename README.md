@@ -1,6 +1,9 @@
 # Future Workshops news
 
-Web-app that displays a view with a list of news and let's you see the details of each one of them.
+Web-app that displays a view with a list of news and let's you see the details of each one of them. Auth is handled by JWT. To enter the app use the next credentials:
+
+**Username**: user <br>
+**Password**: FCtb2PGbHpgq
 
 ### [Live demo](https://fw-news.herokuapp.com/)
 
